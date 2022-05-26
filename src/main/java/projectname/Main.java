@@ -1,16 +1,18 @@
 package projectname;
 
-public class Main {
+import projectname.coder.Encoder;
 
-    public String encode(String plainText) {
-        return null;
-    }
+public class Main {
 
     public String decode(String encodedText) {
         return null;
     }
 
     public static void main(String[] args) {
-        System.out.println("HelloWorld");
+        String plainText = "HelloWord";
+        Encoder encoder = new Encoder("A");
+
+        String encodedMsg = encoder.encode(plainText);
+        System.out.println(encodedMsg);
     }
 }
