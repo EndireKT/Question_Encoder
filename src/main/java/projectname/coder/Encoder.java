@@ -2,17 +2,38 @@ package projectname.coder;
 
 public class Encoder extends Coder {
 
-    public Encoder(char offsetChar) {
-        super(offsetChar);
+    public Encoder() {
     }
 
     public String encode(String plainText) {
-        StringBuilder sb = new StringBuilder();
+        setOffsetChar(plainText.charAt(0));
 
-        for (int i = 0; i < plainText.length(); i++) {
-            //sb.setCharAt(i, plainText.charAt(i) + offsetNum);
+        if (offsetNum == -1) {
+            return plainText;
         }
 
-        return "test";
+        char[] encodedMsg = plainText.toCharArray();
+
+        for (int i = 0; i < plainText.length(); i++) {
+
+            int indexBeforeOffset = calcualteIndex(plainText.charAt(i));
+
+            if (indexBeforeOffset == -1) {
+                continue;
+            }
+
+            int indexAfterOffset = indexBeforeOffset - offsetNum;
+            while (indexAfterOffset < 0) {
+                indexAfterOffset += 44;
+            }
+            while (indexAfterOffset > 43) {
+                indexAfterOffset -= 42;
+            }
+            char c = retrieveShiftedChar(indexAfterOffset);
+            encodedMsg[i] = c;
+        }
+        encodedMsg[0] = offsetChar;
+
+        return String.valueOf(encodedMsg);
     }
 }

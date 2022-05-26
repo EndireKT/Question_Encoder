@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
         String plainText = "HelloWord";
-        Encoder encoder = new Encoder('A');
+        Encoder encoder = new Encoder();
 
         String encodedMsg = encoder.encode(plainText);
         System.out.println(encodedMsg);
