@@ -8,7 +8,6 @@ class EncoderTest {
 
     Encoder encoder = new Encoder('A');
 
-
     @Test
     void testEncode() {
         String plainText = "HELLO WORLD";
