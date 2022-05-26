@@ -2,7 +2,7 @@ package projectname.coder;
 
 public class Encoder extends Coder {
 
-    public Encoder(String offsetChar) {
+    public Encoder(char offsetChar) {
         super(offsetChar);
     }
 
