@@ -31,11 +31,11 @@ class EncoderTest {
 
     @Test
     void testEncode_any() {
-        String plainText = "a ~HELLO WORLD";
+        String plainText = "-. /~";
         String encodedMsg = encoder.encode(plainText);
         System.out.println(encodedMsg);
 
-        String expectedResult = "a ~HELLO WORLD";
+        String expectedResult = "-B C~";
         assertEquals(expectedResult, encodedMsg);
     }
 }

@@ -26,9 +26,6 @@ public class Encoder extends Coder {
             while (indexAfterOffset < 0) {
                 indexAfterOffset += 44;
             }
-            while (indexAfterOffset > 43) {
-                indexAfterOffset -= 42;
-            }
             char c = retrieveShiftedChar(indexAfterOffset);
             encodedMsg[i] = c;
         }
