@@ -37,4 +37,14 @@ class DecoderTest {
         String expectedResult = "-. /~";
         assertEquals(expectedResult, plainText);
     }
+
+    @Test
+    void testEncode_notInList() {
+        String encodedMsg = "aB C~";
+        String plainText = decoder.decode(encodedMsg);
+        System.out.println(plainText);
+
+        String expectedResult = "aB C~";
+        assertEquals(expectedResult, plainText);
+    }
 }
